@@ -104,9 +104,9 @@ export class AppointmentscheduleComponent implements OnInit {
     this.appointment = this.PatientServiceobj.appointment;
     console.log(this.appointment);
 
-    // await this.PatientServiceobj.getAppointmentById(this.currentpatient);
-    // this.getaptbyid = this.PatientServiceobj.getApptbyId;
-    // console.log(this.getaptbyid);
+    await this.PatientServiceobj.getAppointmentById(this.currentpatient);
+    this.getaptbyid = this.PatientServiceobj.getApptbyId;
+    console.log(this.getaptbyid);
     
 
 
@@ -118,9 +118,11 @@ export class AppointmentscheduleComponent implements OnInit {
     this.test = this.PatientServiceobj.testing;
     console.log(this.test);
 
-    await this.PatientServiceobj.GetAppointmentTests();
-    this.appointmenttest = this.PatientServiceobj.appointmenttesting;
-    console.log(this.appointmenttest)
+
+
+    // await this.PatientServiceobj.GetAppointmentTests();
+    // this.appointmenttest = this.PatientServiceobj.appointmenttesting;
+    // console.log(this.appointmenttest)
 
 
 
@@ -157,29 +159,28 @@ export class AppointmentscheduleComponent implements OnInit {
     this.Tests.splice(index, 1);
   }
 
-  async addappointmentTest(value: AppointmentTest) {
-    console.log(value);
-    
-    
-    let x = await this.PatientServiceobj.AddAppointmentTest(value);
-    this.getaptbyid = await this.PatientServiceobj.getAppointmentById(this.currentpatient.appointmentId);
-    this.appointmenttestForm.reset();
-    console.log(x)
-  }
+ 
+  // async addappointmentTest(value: AppointmentTest) {
+  //   console.log(value);
+  //   let x = await this.PatientServiceobj.AddAppointmentTest(value);
+  //   this.getaptbyid = await this.PatientServiceobj.getAppointmentById(this.currentpatient.appointmentId);
+  //   this.appointmenttestForm.reset();
+  //   console.log(x)
+  // }
 
-  async updateappointmentTest(value) {
+  async addappointmentTest(value) {
     console.log(value);
-    let x = await this.PatientServiceobj.UpdateAppointmentTest(value.key);
+    let x = await this.PatientServiceobj.UpdateAppointmentTests(value.key);
     console.log(x)
     return x;
   }
 
-  async deleteapointmentTest(value) {
-    console.log(value);
-    let x = await this.PatientServiceobj.DeleteAppointmentTest(value.key.appointmentTestId);
-    console.log(x);
-    return x;
-  }
+  // async deleteapointmentTest(value) {
+  //   console.log(value);
+  //   let x = await this.PatientServiceobj.DeleteAppointmentTest(value.key.appointmentTestId);
+  //   console.log(x);
+  //   return x;
+  // }
 
   valueChanged(d) {
     if (this.PatientType.value = "new") {
@@ -220,8 +221,8 @@ export class AppointmentscheduleComponent implements OnInit {
     console.log(cid.value);
     console.log(value);
     console.log(this.appointmentForm.value);
-     this.appointmentForm.value.ConsultantId = cid.value;
-     console.log(this.appointmentForm.value);
+  this.appointmentForm.value.ConsultantId = cid.value;
+     //console.log(this.appointmentForm.value);
    let x = await this.PatientServiceobj.addAppointment(value);
     console.log(x);
     this.appointmentForm.reset();

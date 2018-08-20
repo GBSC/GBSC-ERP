@@ -184,34 +184,34 @@ async deletePatient(id)
   }
 
 
-  async GetAppointmentTests()
-  {
-    this.appointmenttesting = await this.http1.get<AppointmentTest>(this.API_URL+'/Appointments/GetAppointmentTests').toPromise();
-    console.log(this.appointmenttesting);
-    return this.appointmenttesting;    
-  }
+  // async GetAppointmentTests()
+  // {
+  //   this.appointmenttesting = await this.http1.get<AppointmentTest>(this.API_URL+'/Appointments/GetAppointmentTests').toPromise();
+  //   console.log(this.appointmenttesting);
+  //   return this.appointmenttesting;    
+  // }
 
-  async AddAppointmentTest(appointmentTest : AppointmentTest)
+  // async AddAppointmentTest(appointmentTest : AppointmentTest)
+  // {
+  //   let x = await this.http1.post(this.API_URL+'/Appointments/AddAppointmentTests/',appointmentTest).toPromise();
+  //   console.log(x);
+  //   return x;    
+  // }
+
+  async UpdateAppointmentTests(appointmentTest : AppointmentTest)
   {
-    let x = await this.http1.post(this.API_URL+'/Appointments/AddAppointmentTests/',appointmentTest).toPromise();
+    let x  = await this.http1.put(`${this.API_URL}/Appointments/UpdateAppointmentTests/`,appointmentTest).toPromise();
     console.log(x);
     return x;    
   }
 
-  async UpdateAppointmentTest(appointmentTest : AppointmentTest)
-  {
-    let x  = await this.http1.put(`${this.API_URL}//`,appointmentTest).toPromise();
-    console.log(x);
-    return x;    
-  }
-
-  async DeleteAppointmentTest(id)
-  {
-    let x = await this.http1.delete(this.API_URL+''+id).toPromise();
-    console.log(x);
-    return x;
+  // async DeleteAppointmentTest(id)
+  // {
+  //   let x = await this.http1.delete(this.API_URL+''+id).toPromise();
+  //   console.log(x);
+  //   return x;
     
-  }
+  // }
 
   async GetPatientVitals()
   {
