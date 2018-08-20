@@ -1,4 +1,7 @@
-
+.m-accordion.m-accordion--bordered .m-accordion__item, .m-accordion.m-accordion--default .m-accordion__item {
+  border: 1px solid #688bae;
+  background-color: #fff;
+}
 /*  bhoechie tab */
 div.bhoechie-tab-container{
     z-index: 10;

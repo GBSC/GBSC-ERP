@@ -25,14 +25,13 @@ import { AppointmentsblockComponent } from './appointmentsblock/appointmentsbloc
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FindPatientComponent } from './find-patient/find-patient.component';
-import { ShdComponent } from './shd/shd.component';
 import { ConsultantComponent } from './consultant/consultant.component';
 import { HimsSetupTestComponent } from './hims-setup-test/hims-setup-test.component';
-import { AppointmentSchedulingComponent } from './appointment-scheduling/appointment-scheduling.component';
-import { HeaderComponent } from './shared/header/header.component';
+ import { HeaderComponent } from './shared/header/header.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DxButtonModule, DxDataGridModule, DevExtremeModule } from 'devextreme-angular';
+import { AppointmentscheduleComponent } from './appointmentschedule/appointmentschedule.component';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -65,17 +64,16 @@ import { DxButtonModule, DxDataGridModule, DevExtremeModule } from 'devextreme-a
         PatientvitalsComponent,
         AdmitinpatientComponent,
         GeneralactionsComponent,
-        ShdComponent,
         VisitnoteComponent,
         VisitsComponent,
         AppointmentsblockComponent,
         HimsSetupTestComponent,
         HomeComponent,
         FindPatientComponent,
-        AppointmentSchedulingComponent,
         HeaderComponent,
         MenuComponent,
         FooterComponent,
+        AppointmentscheduleComponent,
     ],
     providers: [
         PatientService

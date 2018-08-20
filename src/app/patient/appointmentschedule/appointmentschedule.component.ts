@@ -6,12 +6,13 @@ import { AppointmentTest } from '../../../app/models/appointmentTest'
 import { DxDataGridModule,DxLoadPanelModule,
   DxDataGridComponent,
   DxTemplateModule } from 'devextreme-angular';
+
 @Component({
-  selector: 'app-shd',
-  templateUrl: './shd.component.html',
-  styleUrls: ['./shd.component.css']
+  selector: 'app-appointmentschedule',
+  templateUrl: './appointmentschedule.component.html',
+  styleUrls: ['./appointmentschedule.component.scss']
 })
-export class ShdComponent implements OnInit {
+export class AppointmentscheduleComponent implements OnInit {
 
   @ViewChild(DxDataGridComponent) dataGrid: DxDataGridComponent;
 
@@ -65,6 +66,24 @@ export class ShdComponent implements OnInit {
         PhoneNumber: ['', Validators.required],
         NIC: ['', Validators.required],
       });
+      this.appointmentForm = this.formBuilder.group(
+        {
+          'PatientType': ['', Validators.required],
+          'ConsultantId': ['', Validators.required],
+          'VisitStatus': ['', Validators.required],
+          'VisitNature': ['', Validators.required],
+          'PatientId': ['', Validators.required],
+          'TimeIn': ['', Validators.required],
+          'TimeOut': ['', Validators.required],
+          'Remarks': ['', Validators.required],
+          'TentativeTime':['',Validators.required]
+        });
+
+      this.appointmentTimeForm = this.formBuilder.group({
+        'TimeIn': ['', Validators.required],
+        'TimeOut': ['', Validators.required],
+        'Remarks': ['', Validators.required]
+      });
   }
 
   showIt() {
@@ -105,43 +124,8 @@ export class ShdComponent implements OnInit {
 
 
 
-
-    // this.patientForm = this.formBuilder.group(
-    //   {
-    //     'FirstName': ['kljdfljasdlf', Validators.required],
-    //     'Gender': ['', Validators.required],
-    //     'LastName': ['', Validators.required],
-    //     'DOB': ['', Validators.required],
-    //     'PhoneNumber': ['', Validators.required],
-    //     'NIC': ['', Validators.required],
-    //   })
-
-    this.appointmentForm = this.formBuilder.group(
-      {
-        'PatientType': ['', Validators.required],
-        'ConsultantId': ['', Validators.required],
-        'VisitStatus': ['', Validators.required],
-        'VisitNature': ['', Validators.required],
-        'FinalTime': ['', Validators.required],
-        'PatientId': ['', Validators.required],
-        'TimeIn': ['', Validators.required],
-        'TimeOut': ['', Validators.required],
-        'Remarks': ['', Validators.required]
-      });
-
-    // this.appointmenttestForm = this.formBuilder.group(
-    //   {
-    //     'AppointmentId': ['147', Validators.required],
-    //     'TestId': ['1', Validators.required]
-    //   })
-
-    console.log(this.patientForm);
-
-    this.appointmentTimeForm = this.formBuilder.group({
-      'TimeIn': ['', Validators.required],
-      'TimeOut': ['', Validators.required],
-      'Remarks': ['', Validators.required]
-    });
+ 
+  
 
     this.PatientType = [{ value: "new", display: "New" }, { value: "previous", display: "Previous" }];
   }
@@ -322,3 +306,4 @@ export class ShdComponent implements OnInit {
   //    }
 
 }
+

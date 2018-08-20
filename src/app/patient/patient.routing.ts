@@ -14,8 +14,7 @@ import { HealthTrendSummaryComponent } from '../patient/health-trend-summary/hea
 import { WeightGraphComponent } from '../patient/weight-graph/weight-graph.component';
 import { VitalsComponent } from '../patient/vitals/vitals.component';
 import { AppointmentsComponent } from '../patient/appointments/appointments.component';
-import { AppointmentSchedulingComponent } from '../patient/appointment-scheduling/appointment-scheduling.component';
-import { PatientvitalsComponent } from '../patient/patientvitals/patientvitals.component';
+ import { PatientvitalsComponent } from '../patient/patientvitals/patientvitals.component';
 import { AdmitinpatientComponent } from '../patient/admitinpatient/admitinpatient.component';
 import { GeneralactionsComponent } from '../patient/generalactions/generalactions.component';
 import { VisitnoteComponent } from '../patient/visitnote/visitnote.component';
@@ -23,7 +22,7 @@ import { VisitsComponent } from '../patient/visits/visits.component';
 import { AppointmentsblockComponent } from '../patient/appointmentsblock/appointmentsblock.component';
 import { FindPatientComponent } from '../patient/find-patient/find-patient.component';
 import { HomeComponent } from '../patient/home/home.component';
-import { ShdComponent } from '../patient/shd/shd.component';
+import { AppointmentscheduleComponent } from '../patient/appointmentschedule/appointmentschedule.component';
 import { ConsultantComponent } from '../patient/consultant/consultant.component';
 import { HimsSetupTestComponent } from '../patient/hims-setup-test/hims-setup-test.component';
 
@@ -58,11 +57,10 @@ export const routing: ModuleWithProviders = RouterModule.forChild([
             { path: 'appointmentsblock', component: AppointmentsblockComponent },
             { path: 'home', component: HomeComponent },
             { path: 'findpatient', component: FindPatientComponent },
-            { path: 'shd', component: ShdComponent },
+            { path: 'appointmentschedule', component: AppointmentscheduleComponent },
             { path: 'consultant', component: ConsultantComponent },
             { path: 'himssetuptest', component: HimsSetupTestComponent },
-            { path: 'appointmentscheduling', component: AppointmentSchedulingComponent }
-
+ 
         ]
     }
 ]);

@@ -6,6 +6,7 @@ import { Appointment } from '../../models/appointment';
 import { Consultant } from '../../models/consultant';
 import { himsSetupTest } from '../../models/himsSetupTest';
 import { AppointmentTest } from '../../models/appointmentTest';
+import { PatientVital } from '../../models/patientvitals';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,6 +32,9 @@ export class PatientService {
   //for test
   public testing : any;
   public appointmenttesting : any;
+
+  // for patientVitals
+  public PatientVitals : any;
 
    private readonly API_URL = 'http://gbsc-erp.azurewebsites.net/hims/api';
      //private readonly API_URL = 'http://localhost:58788/api';
@@ -207,6 +211,35 @@ async deletePatient(id)
     console.log(x);
     return x;
     
+  }
+
+  async GetPatientVitals()
+  {
+    this.PatientVitals = await this.http1.get<PatientVital>(this.API_URL+'/Appointments/GetPatientVitals').toPromise();
+    console.log(this.PatientVitals);
+    return this.PatientVitals
+  }
+
+
+  async AddPatientVital(patientVital : PatientVital)
+  {
+    let x = await this.http1.post(this.API_URL+'/Appointments/AddPatientVitals',patientVital).toPromise();
+    console.log(x);
+    return x;    
+  }
+
+  async UpdatePatientVital(patientVital : PatientVital)
+  {
+    let x = await this.http1.put(`${this.API_URL}/Appointments/UpdatePatientVital/`,patientVital).toPromise();
+    console.log(x);
+    return x;
+  }
+
+  async DeletePatientVitals(id)
+  {
+    let x = await this.http1.delete(this.API_URL+'/Appointments/DeletePatientVital/'+id).toPromise();
+    console.log(x);
+    return x;
   }
 
   // setCurrentPatient(currentPatientId) {

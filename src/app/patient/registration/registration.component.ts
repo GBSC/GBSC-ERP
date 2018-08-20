@@ -36,6 +36,54 @@ export class RegistrationComponent implements OnInit {
 
   public documentss: any = [];
   constructor(private formBuilder: FormBuilder, private PatientServiceobj: PatientService) {
+    this.referenceForm = this.formBuilder.group({
+      'ReferredBy': ['', Validators.required],
+      'PersonName': ['', Validators.required],
+      'RefAddress': ['', Validators.required],
+      'ReferenceTel': ['', Validators.required]
+    });
+    this.documentForm = this.formBuilder.group({
+      'DocumentName': ['', Validators.required],
+      'Remarks': ['', Validators.required],
+      'FilePath': ['', Validators.required]
+    });
+    this.partnerForm = this.formBuilder.group({
+      'FirstName': ['', Validators.required],
+      'MiddleName': ['', Validators.required],
+      'LastName': ['', Validators.required],
+      'DOB': ['', Validators.required],
+      'PlaceOfBirth': ['', Validators.required],
+      'Occupation': ['', Validators.required],
+      'NIC': ['', Validators.required],
+      'PhoneNumber': ['', Validators.required],
+    });
+    this.patientForm = this.formBuilder.group({
+      'RegCity': ['', Validators.required],
+      'VisitNature': ['', Validators.required],
+      'FirstName': ['', Validators.required],
+      'MiddleName': ['', Validators.required],
+      'LastName': ['', Validators.required],
+      'DOB': ['', Validators.required],
+      'PlaceOfBirth': ['', Validators.required],
+      'Occupation': ['', Validators.required],
+      'NIC': ['', Validators.required],
+      'Gender': ['', Validators.required],
+      'PhoneNumber': ['', Validators.required],
+      'OfficeAddress': ['', Validators.required],
+
+      'ResidenceAddress': ['', Validators.required],
+      'Remarks': ['', Validators.required],
+      'OfficeTel': ['', Validators.required],
+      'ForeignAddress': ['', Validators.required],
+      'Country': ['', Validators.required],
+      'City': ['', Validators.required],
+      'State': ['', Validators.required],
+      'PostalCode': ['', Validators.required],
+      'Initial': ['', Validators.required],
+      'PrivatePatientCons': ['', Validators.required],
+      'PrivateHospital': ['', Validators.required],
+      'AuthorizedPerson': ['', Validators.required],
+    });
   }
 
 
@@ -95,56 +143,7 @@ async ngOnInit() {
     console.log(this.PatientServiceobj.patients)
 
     
-    this.referenceForm = this.formBuilder.group({
-      'ReferredBy': ['', Validators.required],
-      'PersonName': ['', Validators.required],
-      'RefAddress': ['', Validators.required],
-      'ReferenceTel': ['', Validators.required]
-    });
-
-
-    this.documentForm = this.formBuilder.group({
-      'DocumentName': ['', Validators.required],
-      'Remarks': ['', Validators.required],
-      'FilePath': ['', Validators.required]
-    });
-    this.partnerForm = this.formBuilder.group({
-      'FirstName': ['', Validators.required],
-      'MiddleName': ['', Validators.required],
-      'LastName': ['', Validators.required],
-      'DOB': ['', Validators.required],
-      'PlaceOfBirth': ['', Validators.required],
-      'Occupation': ['', Validators.required],
-      'NIC': ['', Validators.required],
-      'PhoneNumber': ['', Validators.required],
-    });
-    this.patientForm = this.formBuilder.group({
-      'RegCity': ['', Validators.required],
-      'VisitNature': ['', Validators.required],
-      'FisrtName': ['', Validators.required],
-      'MiddleName': ['', Validators.required],
-      'LastName': ['', Validators.required],
-      'DOB': ['', Validators.required],
-      'PlaceOfBirth': ['', Validators.required],
-      'Occupation': ['', Validators.required],
-      'NIC': ['', Validators.required],
-      'Gender': ['', Validators.required],
-      'PhoneNumber': ['', Validators.required],
-      'OfficeAddress': ['', Validators.required],
-
-      'ResidenceAddress': ['', Validators.required],
-      'Remarks': ['', Validators.required],
-      'OfficeTel': ['', Validators.required],
-      'ForeignAddress': ['', Validators.required],
-      'Country': ['', Validators.required],
-      'City': ['', Validators.required],
-      'State': ['', Validators.required],
-      'PostalCode': ['', Validators.required],
-      'Initial': ['', Validators.required],
-      'PrivatePatientCons': ['', Validators.required],
-      'PrivateHospital': ['', Validators.required],
-      'AuthorizedPerson': ['', Validators.required],
-    });
+   
 
   }
 
