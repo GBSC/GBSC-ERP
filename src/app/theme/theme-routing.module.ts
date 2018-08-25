@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { ThemeComponent } from './theme.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from "../auth/_guards/auth.guard";
-import { PatientModule } from '../patient/patient.module';
+
+import { PatientModule } from '../hims/patient/patient.module';
 import { InventorysystemModule } from '../Inventorysystem/Inventorysystem.module';
 import { SetupModule } from '../setup/setup.module';
 import { FinanceModule } from '../finance/finance.module';
-import { LabModule } from '../lab/lab.module';
+import { LabModule } from '../hims/lab/lab.module';
+import { AccountModule } from '../account/account.module';
 import { SystemAdministrationModule } from '../systemadministration/systemadministration.module';
 
 
@@ -56,6 +58,7 @@ const routes: Routes = [
         InventorysystemModule,
         SetupModule,
         SystemAdministrationModule,
+        AccountModule,
     ],
     exports: [
         RouterModule,

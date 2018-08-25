@@ -11,8 +11,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HrefPreventDefaultDirective } from '../../_directives/href-prevent-default.directive';
 import { UnwrapTagDirective } from '../../_directives/unwrap-tag.directive';
-import { PatientModule } from '../../patient/patient.module';
-
+import { PatientModule } from '../../hims/patient/patient.module';
 
 
 @NgModule({

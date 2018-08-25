@@ -14,6 +14,13 @@ import { MenuComponent } from '../systemadministration/shared/menu/menu.componen
 
 import { DxButtonModule, DxDataGridModule, DevExtremeModule } from 'devextreme-angular';
 import { RolesandprivilegesComponent } from './rolesandprivileges/rolesandprivileges.component';
+import { BranchComponent } from '../systemadministration/branch/branch.component';
+import { CompanyComponent } from '../systemadministration/company/company.component';
+import { DepartmentComponent } from '../systemadministration/department/department.component';
+import { FeatureComponent } from '../systemadministration/feature/feature.component';
+import { ModuleComponent } from '../systemadministration/module/module.component';
+import { RoleComponent } from '../systemadministration/role/role.component';
+
 import { SystemAdministrationService } from './service/systemadministration.services';
 
 @NgModule({
@@ -27,11 +34,21 @@ import { SystemAdministrationService } from './service/systemadministration.serv
         DxDataGridModule,
     ],
     declarations: [
+
         RootComponent,
         FooterComponent,
         HeaderComponent,
         MenuComponent,
         RolesandprivilegesComponent,
+        BranchComponent,
+        CompanyComponent,
+        DepartmentComponent,
+        FeatureComponent,
+        ModuleComponent,
+        RoleComponent,
+
+
+
 
     ],
 
